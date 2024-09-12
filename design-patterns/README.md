@@ -12,7 +12,7 @@ Encapsulate a request as an object, thereby letting you parameterize clients wit
 
 In this pattern an abstract Command class is declared as an interface for executing operations. The Command class defines a method named execute, which must be implemented in each concrete command. This execute method is a bridge between a Receiver object and an action. The Receiver knows how to perform the operations associated with a request (any class may be a Receiver). Another relevant component in this pattern is the Invoker class which asks for the command that must be executed.
 
-![alt text](image.png)
+![alt text](UML-diagram-CommandPattern.png)
 
 ## Command Pattern: When To Use
 
