@@ -15,10 +15,12 @@ export const Counter = () => {
   const { executeCommand, undoLastCommand } = Invoker();
   return (
     <Fragment>
-      <h2>COUNTER: {counter.count}</h2>
-      <Button name="Increment" onClick={() => executeCommand(increment)} />
-      <Button name="Decrement" onClick={() => executeCommand(decrement)} />
-      <Button name="Undo" onClick={undoLastCommand} />
+      <section className="flex flex-row justify-center items-center gap-3">
+        <h2>COUNTER: {counter.count}</h2>
+        <Button name="Increment" onClick={() => executeCommand(increment)} />
+        <Button name="Decrement" onClick={() => executeCommand(decrement)} />
+        <Button name="Undo" onClick={undoLastCommand} />
+      </section>
     </Fragment>
   );
 };
