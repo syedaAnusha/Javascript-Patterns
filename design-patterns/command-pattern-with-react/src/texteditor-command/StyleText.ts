@@ -1,11 +1,25 @@
 import { useState } from "react";
 export const StyleText = () => {
-  const [boldText, setBoldText] = useState<string>("");
-  const handleBoldText = (text: string, start: any, end: any) => {
-    const startSelection = text.slice(0, start);
+  const [styleText, setStyleText] = useState<string>("");
+
+  const handleTextStyle = (
+    text: string,
+    start: any,
+    end: any,
+    styleType: string,
+    isBold: boolean,
+    isItalic: boolean
+  ) => {
     const selected = text.slice(start, end);
-    const endSelection = text.slice(end);
-    setBoldText(startSelection + `<b>${selected}</b>` + endSelection);
+    if (styleType === "bold" && isItalic !== true) {
+      setStyleText(`<b>${selected}</b>`);
+    }
+    if (styleType === "italic" && isBold !== true) {
+      setStyleText(`<i>${selected}</i>`);
+    }
+    if (isBold === true && isItalic === true) {
+      setStyleText(`<b><i>${selected}</i></b>`);
+    }
   };
-  return { boldText, handleBoldText };
+  return { styleText, handleTextStyle };
 };
